@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class BookBorrowing extends Model
 {
     use HasFactory;
+<<<<<<< HEAD
 
     protected $table= 'bookborrowing';
     
@@ -16,4 +17,6 @@ class BookBorrowing extends Model
          'bookdescription',
          'bookcode',
     ];
+=======
+>>>>>>> a92db39086c1cc2b9513c4cea9432e1052274866
 }

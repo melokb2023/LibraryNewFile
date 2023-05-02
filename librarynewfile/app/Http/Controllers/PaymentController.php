@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class BookBorrowingController extends Controller
+class PaymentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,15 +27,7 @@ class BookBorrowingController extends Controller
      */
     public function store(Request $request)
     {
-<<<<<<< HEAD
-        $validateData =$request->validate([
-            'xbookno' => ['required', 'max:8'],
-            'xfbookdescription' =>['required', 'max:100'],
-            'xbookcode'=>['required','max:15'],
-        ]);
-=======
         //
->>>>>>> a92db39086c1cc2b9513c4cea9432e1052274866
     }
 
     /**

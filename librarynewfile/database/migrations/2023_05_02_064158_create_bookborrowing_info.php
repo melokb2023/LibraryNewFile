@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('bookborrowing_info', function (Blueprint $table) {
             $table->id();
+            $table->string('booknumber',15);
+            $table->string('bookdescription',15);
+            $table->string('bookcode',15);
             $table->timestamps();
         });
     }

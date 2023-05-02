@@ -11,8 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('netzone_info', function (Blueprint $table) {
-            $table->id();
+        Schema::create('session', function (Blueprint $table) {
+            $table->id('sno');
+            $table->string('studentpurpose',15);
+            $table->string('studentsession',15);
             $table->timestamps();
         });
     }
@@ -22,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('netzone_info');
+        Schema::dropIfExists('session');
     }
 };

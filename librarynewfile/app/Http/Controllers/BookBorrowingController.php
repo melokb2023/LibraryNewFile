@@ -27,7 +27,11 @@ class BookBorrowingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData =$request->validate([
+            'xbookno' => ['required', 'max:8'],
+            'xfbookdescription' =>['required', 'max:100'],
+            'xbookcode'=>['required','max:15'],
+        ]);
     }
 
     /**

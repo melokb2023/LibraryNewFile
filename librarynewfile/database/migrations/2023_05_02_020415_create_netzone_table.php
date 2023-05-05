@@ -12,8 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('netzone', function (Blueprint $table) {
-            $table->id();
+            $table->id('sno');
+            $table->string('purpose',15);
+            $table->string('sittingnumber',15);
             $table->timestamps();
+            $table->foreign('sNo') ->references('sNo') -> on('studentinfo');
         });
     }
 

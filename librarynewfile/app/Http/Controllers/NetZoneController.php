@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\NetZone;
 
 use Illuminate\Http\Request;
 
@@ -11,7 +12,13 @@ class NetZoneController extends Controller
      */
     public function index()
     {
-        //
+        $netzone = new NetZone;
+        $netzone->sno = 1;
+        $netzone->purpose = "Documentation";
+        $netzone->sittingnumber = "Kyle Bryant";
+        $netzone->save();
+
+       echo "Grades data successfully saved in the database";
     }
 
     /**

@@ -11,7 +11,7 @@ class BookBorrowingController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -29,7 +29,7 @@ class BookBorrowingController extends Controller
     {
         $validateData =$request->validate([
             'xbookno' => ['required', 'max:8'],
-            'xfbookdescription' =>['required', 'max:100'],
+            'xbookdescription' =>['required', 'max:100'],
             'xbookcode'=>['required','max:15'],
         ]);
     }

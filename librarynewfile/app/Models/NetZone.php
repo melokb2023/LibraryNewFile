@@ -12,6 +12,7 @@ class NetZone extends Model
     protected $table= 'netzone';
     
     protected $fillable = [
+         'sno',
          'purpose',
          'sittingnumber',
     

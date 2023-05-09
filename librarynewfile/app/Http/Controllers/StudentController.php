@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Student;
+use App\Models\Student;
 
 class StudentController extends Controller
 {
@@ -12,8 +12,19 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $studentinfo = StudentInfo:: all();
-        return view('students.index' , compact('studentinfo'));
+        $student = new Student;
+        $student->idNo = "C20-0002";
+        $student->firstName = "Kyle Bryant";
+        $student->middleName = "Mejares";
+        $student->lastName= "Melo";
+        $student->suffix = "";
+        $student->course = "BSIT";
+        $student->year = 3;
+        $student->birthDate = "2001-01-27";
+        $student->gender = "Male";
+        $student->save();
+
+       echo "Grades data successfully saved in the database";
     }
 
     /**
@@ -41,17 +52,17 @@ class StudentController extends Controller
             'xgender' =>['required']
         ]);
         
-        $studentinfo = new StudentInfo();
-        $studentinfo ->idNo=$request->xidNo;
-        $studentinfo ->firstName=$request->xfirstName;
-        $studentinfo ->middleName=$request->xmiddleName;
-        $studentinfo ->lastName=$request->xlastName;
-        $studentinfo ->suffix=$request->xsuffix;
-        $studentinfo ->course=$request->xcourse;
-        $studentinfo ->year=$request->xyear;
-        $studentinfo ->birthDate=$request->xbirthDate;
-        $studentinfo ->gender=$request->xgender;
-        $studentinfo ->save();
+        $student = new StudentInfo();
+        $student ->idNo=$request->xidNo;
+        $student ->firstName=$request->xfirstName;
+        $student ->middleName=$request->xmiddleName;
+        $student ->lastName=$request->xlastName;
+        $student ->suffix=$request->xsuffix;
+        $student ->course=$request->xcourse;
+        $student ->year=$request->xyear;
+        $student ->birthDate=$request->xbirthDate;
+        $student ->gender=$request->xgender;
+        $student ->save();
         return redirect()->route('students');
     }
 

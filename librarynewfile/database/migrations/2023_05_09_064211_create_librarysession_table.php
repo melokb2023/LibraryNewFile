@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('session', function (Blueprint $table) {
+        Schema::create('librarysession', function (Blueprint $table) {
             $table->id('sno');
             $table->string('studentpurpose',15);
             $table->string('studentsession',15);
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('session');
+        Schema::dropIfExists('librarysession');
     }
 };

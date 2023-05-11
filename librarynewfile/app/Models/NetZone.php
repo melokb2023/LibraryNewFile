@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class NetZone extends Model
 {
     use HasFactory;
+
+    protected $table= 'netzonedata';
+    
+    protected $fillable = [
+         'sno',
+         'purpose',
+         'sittingnumber',
+    
+    ];
 }

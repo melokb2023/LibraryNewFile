@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('netzone', function (Blueprint $table) {
-            $table->id('sno');
+        Schema::create('netzonedata', function (Blueprint $table) {
+            $table->id('nno');
+            $table->unsignedBigInteger('sno');
             $table->string('purpose',15);
             $table->string('sittingnumber',15);
             $table->timestamps();
-            $table->foreign('sNo') ->references('sNo') -> on('studentinfo');
+            $table->foreign('sno') ->references('sno') -> on('student_info');
         });
     }
 
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('netzone');
+        Schema::dropIfExists('netzonedata');
     }
 };

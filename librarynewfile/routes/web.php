@@ -2,7 +2,11 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\NetZoneController;
+use App\Http\Controllers\SessionController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\BookBorrowingController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +21,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/student',[StudentController:: class, 'index']);
+Route::get('/netzone',[NetZoneController:: class, 'index']);
+Route::get('/session',[SessionController:: class, 'index']);
+Route::get('/payment',[PaymentController:: class, 'index']);
+Route::get('/bookborrowing',[BookBorrowingController:: class, 'index']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

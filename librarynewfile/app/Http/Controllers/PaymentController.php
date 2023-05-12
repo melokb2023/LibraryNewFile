@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Payment;
 
 class PaymentController extends Controller
 {
@@ -11,7 +12,14 @@ class PaymentController extends Controller
      */
     public function index()
     {
-        //
+        $payment  = new Payment;
+        $payment ->payment = 2.45;
+        $payment ->paymentMethod = "Cash On Delivery";
+        $payment ->reasons = "Crumpled Pages";
+        $payment ->remarks = "Paid";
+        $payment ->save();
+
+       echo "Grades data successfully saved in the database";
     }
 
     /**

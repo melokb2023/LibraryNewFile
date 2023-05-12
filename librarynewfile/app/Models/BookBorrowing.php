@@ -9,10 +9,10 @@ class BookBorrowing extends Model
 {
     use HasFactory;
 
-    protected $table = 'bookborrowing';
+    protected $table = 'bookborrowingdetail';
     
     protected $fillable = [
-         'bookno',
+         'booknumber',
          'bookdescription',
          'bookcode',
     ];

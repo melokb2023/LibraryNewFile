@@ -15,7 +15,7 @@ class NetZoneController extends Controller
         $netzone = new NetZone;
         $netzone->sno = 1;
         $netzone->purpose = "Documentation";
-        $netzone->sittingnumber = "Kyle Bryant";
+        $netzone->sittingnumber = 14;
         $netzone->save();
 
        echo "Grades data successfully saved in the database";

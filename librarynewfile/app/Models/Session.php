@@ -12,6 +12,7 @@ class Session extends Model
     protected $table= 'session';
     
     protected $fillable = [
+         'sno',
          'studentpurpose',
          'studentsession',
     

@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\Models\Student;
 
 class StudentController extends Controller
@@ -12,19 +13,24 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $student = new Student;
-        $student->idNo = "C20-0002";
-        $student->firstName = "Kyle Bryant";
-        $student->middleName = "Mejares";
-        $student->lastName= "Melo";
-        $student->suffix = "";
-        $student->course = "BSIT";
-        $student->year = 3;
-        $student->birthDate = "2001-01-27";
-        $student->gender = "Male";
-        $student->save();
+       // $student = new Student;
+       // $student->idNo = "C20-0002";
+       // $student->firstName = "Kyle Bryant";
+       // $student->middleName = "Mejares";
+       // $student->lastName= "Melo";
+       // $student->suffix = "";
+       // $student->course = "BSIT";
+       // $student->year = 3;
+       // $student->birthDate = "2001-01-27";
+       // $student->gender = "Male";
+       // $student->save();
+//
+       //echo "Grades data successfully saved in the database";
 
-       echo "Grades data successfully saved in the database";
+       $student = Student:: all();
+       return view('student.index', compact('student'));
+
+     
     }
 
     /**
@@ -43,7 +49,7 @@ class StudentController extends Controller
         $validateData =$request->validate([
             'xidNo' => ['required', 'max:8'],
             'xfirstName' =>['required', 'max:20'],
-            'xmiddleName'=>['max:15'],
+            'xmiddleName'=>['max:20'],
             'xlastName' =>['required', 'max:20'],
             'xsuffix' =>['max:5'],
             'xcourse' =>['required','max:15'],
@@ -52,7 +58,7 @@ class StudentController extends Controller
             'xgender' =>['required']
         ]);
         
-        $student = new StudentInfo();
+        $student = new Student();
         $student ->idNo=$request->xidNo;
         $student ->firstName=$request->xfirstName;
         $student ->middleName=$request->xmiddleName;
@@ -63,7 +69,7 @@ class StudentController extends Controller
         $student ->birthDate=$request->xbirthDate;
         $student ->gender=$request->xgender;
         $student ->save();
-        return redirect()->route('students');
+        return redirect()->route('student');
     }
 
     /**
@@ -71,8 +77,8 @@ class StudentController extends Controller
      */
     public function show(string $id)
     {
-        $studentinfo = StudentInfo::where('sno', $id)->get();
-        return view('student.show', compact('studentinfo'));
+        $student = Student::where('sno', $id)->get();
+        return view('student.show', compact('student_info'));
     }
 
     /**
@@ -80,8 +86,8 @@ class StudentController extends Controller
      */
     public function edit(string $id)
     {
-        $studentinfo = StudentInfo::where('sno', $id)->get();
-        return view('students.edit', compact('studentinfo'));
+        $student = Student::where('sno', $id)->get();
+        return view('student.edit', compact('student_info'));
     }
 
     /**
@@ -101,7 +107,7 @@ class StudentController extends Controller
             'xgender' =>['required']
         ]);
 
-        $studentinfo = StudentInfo::where('sno', $id)
+        $student= Student::where('sno', $id)
         ->update(
              ['idNo' => $request->xidNo,
              'firstName'=> $request->xfirstName,
@@ -113,7 +119,7 @@ class StudentController extends Controller
              'birthDate'=> $request->xbirthDate,
              'gender'=> $request->xgender,
              ]);
-        return redirect()->route('students');
+        return redirect()->route('student');
     }
 
     /**
@@ -121,8 +127,8 @@ class StudentController extends Controller
      */
     public function destroy(string $id)
     {
-        $studentinfo = StudentInfo::where('sno', $id);
-        $studentinfo->delete();
-        return redirect()->route('students');
+        $student= Student::where('sno', $id);
+        $student->delete();
+        return redirect()->route('student');
     }
 }

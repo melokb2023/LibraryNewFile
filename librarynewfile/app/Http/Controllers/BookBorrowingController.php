@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\BookBorrowing;
 
 class BookBorrowingController extends Controller
 {
@@ -11,7 +12,13 @@ class BookBorrowingController extends Controller
      */
     public function index()
     {
-        
+        $bookborrowing = new BookBorrowing;
+        $bookborrowing->booknumber = "C34-1234";
+        $bookborrowing->bookdescription = "Java Basics";
+        $bookborrowing->bookcode = "B22";
+        $bookborrowing->save();
+
+       echo "Grades data successfully saved in the database";
     }
 
     /**

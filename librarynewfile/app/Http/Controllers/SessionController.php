@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Session;
 
 class SessionController extends Controller
 {
@@ -11,7 +12,13 @@ class SessionController extends Controller
      */
     public function index()
     {
-       
+        $session = new Session;
+        $session->sno = 1;
+        $session->studentpurpose = "Self-Study";
+        $session->studentsession = "Vacant Time";
+        $session->save();
+
+       echo "Grades data successfully saved in the database";
     }
 
     /**

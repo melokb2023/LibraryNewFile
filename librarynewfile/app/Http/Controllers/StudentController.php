@@ -27,8 +27,8 @@ class StudentController extends Controller
 //
        //echo "Grades data successfully saved in the database";
 
-       $student = Student:: all();
-       return view('student.index', compact('student'));
+      $student = Student:: all();
+    return view('student.index', compact('student'));
 
      
     }
@@ -78,7 +78,7 @@ class StudentController extends Controller
     public function show(string $id)
     {
         $student = Student::where('sno', $id)->get();
-        return view('student.show', compact('student_info'));
+        return view('student.show', compact('student'));
     }
 
     /**
@@ -87,7 +87,7 @@ class StudentController extends Controller
     public function edit(string $id)
     {
         $student = Student::where('sno', $id)->get();
-        return view('student.edit', compact('student_info'));
+        return view('student.edit', compact('student'));
     }
 
     /**

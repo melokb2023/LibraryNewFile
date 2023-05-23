@@ -9,7 +9,7 @@ class NetZone extends Model
 {
     use HasFactory;
 
-    protected $table= 'netzonedata';
+    protected $table= 'netzone';
     
     protected $fillable = [
          'sno',

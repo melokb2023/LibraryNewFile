@@ -103,40 +103,39 @@ Route::patch('/student/update/{stuno}', [StudentController::class, 'update'])
 //   ->middleware(['auth', 'verified'])
 //   ->name('session-update');
 
-// //NetZone
-// //Navigate to Form Add New Session
-// Route::get('/netzone/add', function () {
-//    return view('netzone.add');
-// })->middleware(['auth', 'verified'])->name('add-netzone');
+//NetZone
+//Navigate to Form Add New Session
+Route::get('/netzone/add', [NetZoneController::class, 'getStudentInfo'])
+->middleware(['auth', 'verified'])
+->name('add-netzone');
 
-// //Store Student info to create function under StudentController
-// Route::post('/session/add',[SessionController::class,'store'] )
-// ->middleware(['auth', 'verified'])
-// ->name('session-store');
-
+Route::post('/netzone/add',[NetZoneController::class, 'store'] )
+   ->middleware(['auth', 'verified'])
+   ->name('netzone-store');
+   
 // //- Get All Data From the Student Info Table
-// Route::get('/session', [SessionController::class, 'index']) 
-//   ->middleware(['auth', 'verified'])
-//   ->name('session');
+ Route::get('/netzone', [NetZoneController::class, 'index']) 
+   ->middleware(['auth', 'verified'])
+   ->name('netzone');
 
 // //View Student Info
-// Route::get('/session/{sno}', [SessionController::class, 'show']) 
-//   ->middleware(['auth', 'verified'])
-//   ->name('session-show');
+Route::get('/netzone/{n}', [NetZoneController::class, 'show']) 
+  ->middleware(['auth', 'verified'])
+  ->name('netzone-show');
 
-// Route::delete('/session/delete/{sno}', [SessionController::class, 'destroy']) 
-//   ->middleware(['auth', 'verified'])
-//   ->name('session-delete');
+Route::delete('/netzone/delete/{n}', [NetZoneController::class, 'destroy']) 
+  ->middleware(['auth', 'verified'])
+  ->name('netzone-delete');
 
 // //Transfer Record to Edit Form
-// Route::get('/session/edit/{sno}', [SessionController::class, 'edit']) 
-//   ->middleware(['auth', 'verified'])
-//   ->name('session-edit');
+Route::get('/netzone/edit/{n}', [NetZoneController::class, 'edit']) 
+  ->middleware(['auth', 'verified'])
+  ->name('netzone-edit');
 
 // //Save The Updated Data
-// Route::patch('/session/update/{sno}', [SessionController::class, 'update']) 
-//   ->middleware(['auth', 'verified'])
-//   ->name('session-update');
+Route::patch('/netzone/update/{n}', [NetZoneController::class, 'update']) 
+  ->middleware(['auth', 'verified'])
+  ->name('netzone-update');
 
 
 Route::middleware('auth')->group(function () {

@@ -20,7 +20,7 @@
                         <th>Gender</th>
 </tr>
                     <tbody>
-                    @foreach($studentinfo as $stuinfo)
+                    @foreach($student as $stuinfo)
                        <tr>
                         <td>{{$stuinfo->idNo}}</td>
                         <td>{{$stuinfo->firstName }} {{$stuinfo->middleName }} {{$stuinfo->lastName }}</td>
@@ -32,7 +32,7 @@
                    </tbody>
 
                     </table>
-                    <a class="mt-4 bg-blue-200 text-black font-bold py-2 px-4 rounded" href="{{route('students')}}"> Back </a>
+                    <a class="mt-4 bg-blue-200 text-black font-bold py-2 px-4 rounded" href="{{route('student')}}"> Back </a>
                     
                 </div>
             </div>

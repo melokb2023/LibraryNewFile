@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('purpose',15);
             $table->string('sittingnumber',15);
             $table->timestamps();
-            $table->foreign('sno') ->references('sno') -> on('student');
+            $table->foreign('sno')->references('sno')->on('student_info');
         });
     }
 

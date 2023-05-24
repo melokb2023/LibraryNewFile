@@ -70,38 +70,38 @@ Route::patch('/student/update/{stuno}', [StudentController::class, 'update'])
 
 //SESSION
 //Navigate to Form Add New Session
-// Route::get('/session/add', function () {
-//    return view('session.add');
-// })->middleware(['auth', 'verified'])->name('add-session ');
+Route::get('/librarysession/add', [SessionController::class, 'getStudentInfo'])
+->middleware(['auth', 'verified'])
+->name('add-librarysession');
 
 // //Store Student info to create function under StudentController
-// Route::post('/session/add',[SessionController::class,'store'] )
-// ->middleware(['auth', 'verified'])
-// ->name('session-store');
+Route::post('/librarysession/add',[SessionController::class,'store'] )
+ ->middleware(['auth', 'verified'])
+ ->name('librarysession-store');
 
 // //- Get All Data From the Student Info Table
-// Route::get('/session', [SessionController::class, 'index']) 
-//   ->middleware(['auth', 'verified'])
-//   ->name('session');
+ Route::get('/librarysession', [SessionController::class, 'index']) 
+   ->middleware(['auth', 'verified'])
+   ->name('librarysession');
 
-// //View Student Info
-// Route::get('/session/{sno}', [SessionController::class, 'show']) 
-//   ->middleware(['auth', 'verified'])
-//   ->name('session-show');
+ //View Student Info
+ Route::get('/librarysession/{sessionno}', [SessionController::class, 'show']) 
+  ->middleware(['auth', 'verified'])
+  ->name('librarysession-show');
 
-// Route::delete('/session/delete/{stuno}', [SessionController::class, 'destroy']) 
-//   ->middleware(['auth', 'verified'])
-//   ->name('session-delete');
+Route::delete('/librarysession/delete/{sessionno}', [SessionController::class, 'destroy']) 
+   ->middleware(['auth', 'verified'])
+   ->name('librarysession-delete');
 
 // //Transfer Record to Edit Form
-// Route::get('/session/edit/{stuno}', [SessionController::class, 'edit']) 
-//   ->middleware(['auth', 'verified'])
-//   ->name('session-edit');
+Route::get('/librarysession/edit/{sessionno}', [SessionController::class, 'edit']) 
+   ->middleware(['auth', 'verified'])
+   ->name('librarysession-edit');
 
 // //Save The Updated Data
-// Route::patch('/session/update/{stuno}', [SessionController::class, 'update']) 
-//   ->middleware(['auth', 'verified'])
-//   ->name('session-update');
+  Route::patch('/librarysession/update/{sessionno}', [SessionController::class, 'update']) 
+   ->middleware(['auth', 'verified'])
+   ->name('librarysession-update');
 
 //NetZone
 //Navigate to Form Add New Session

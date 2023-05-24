@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('studentpurpose',15);
             $table->string('studentsession',15);
             $table->timestamps();
-            $table->foreign('sno')->references('sno')->on('student_info');
+            $table->foreign('sno')->references('sno')->on('student');
         });
     }
 

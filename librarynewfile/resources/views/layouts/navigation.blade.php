@@ -21,6 +21,9 @@
                     <x-nav-link :href="route('netzone')" :active="request()->routeIs('netzone')">
                         {{ __('NetZone') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('librarysession')" :active="request()->routeIs('librarysession')">
+                        {{ __('Library Session') }}
+                    </x-nav-link>
 
                 </div>
             </div>

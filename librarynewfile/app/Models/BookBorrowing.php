@@ -12,7 +12,8 @@ class BookBorrowing extends Model
     protected $table = 'bookborrowingdetail';
     
     protected $fillable = [
-         'booknumber',
+         'sno',
+         'bookno',
          'bookdescription',
          'bookcode',
     ];

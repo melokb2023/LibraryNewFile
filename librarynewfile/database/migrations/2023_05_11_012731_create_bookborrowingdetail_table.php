@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('bookborrowingdetail', function (Blueprint $table) {
             $table->id('bbno');
-            $table->string('booknumber',15);
-            $table->string('bookdescription',15);
+            $table->unsignedBigInteger('sno');
+            $table->string('bookno',8);
+            $table->string('bookdescription',100);
             $table->string('bookcode',15);
             $table->timestamps();
+            $table->foreign('sno')->references('sno')->on('student');
         });
     }
 

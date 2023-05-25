@@ -67,7 +67,7 @@ class SessionController extends Controller
     public function edit(string $id)
     {
         $librarysession = Session::where('librarysessionno', $id)->get();
-        return view('librarysession.show', compact('librarysession'));
+        return view('librarysession.edit', compact('librarysession'));
     }
 
     /**
@@ -77,7 +77,7 @@ class SessionController extends Controller
     {
         $librarysession = Session::where('librarysessionno', $id)
         ->update(
-             ['sno' => $request->xsno,
+             [
              'studentpurpose'=> $request->xstudentpurpose,
              'studentsession'=> $request->xstudentsession,
              ]);

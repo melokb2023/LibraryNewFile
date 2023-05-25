@@ -79,7 +79,7 @@ class NetZoneController extends Controller
         
         $netzone = NetZone::where('nno', $id)
         ->update(
-             ['sno' => $request->xsno,
+             [
              'purpose'=> $request->xpurpose,
              'sittingnumber'=> $request->xsittingnumber,
              ]);

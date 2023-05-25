@@ -24,7 +24,12 @@
                     <x-nav-link :href="route('librarysession')" :active="request()->routeIs('librarysession')">
                         {{ __('Library Session') }}
                     </x-nav-link>
-
+                    <x-nav-link :href="route('payment')" :active="request()->routeIs('payment')">
+                        {{ __('Payment') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('bookborrowingdetail')" :active="request()->routeIs('bookborrowingdetail')">
+                        {{ __('Book Borrowing') }}
+                    </x-nav-link>
                 </div>
             </div>
             

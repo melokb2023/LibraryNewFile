@@ -12,8 +12,9 @@ class Payment extends Model
     protected $table= 'payment';
     
     protected $fillable = [
+         'sno',
          'payment',
-         'paymentMethod',
+         'paymentmethod',
          'reasons',
          'remarks',
     

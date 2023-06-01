@@ -15,8 +15,25 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('student')" :active="request()->routeIs('student')">
+                        {{ __('Student') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('netzone')" :active="request()->routeIs('netzone')">
+                        {{ __('NetZone') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('librarysession')" :active="request()->routeIs('librarysession')">
+                        {{ __('Library Session') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('payment')" :active="request()->routeIs('payment')">
+                        {{ __('Payment') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('bookborrowingdetail')" :active="request()->routeIs('bookborrowingdetail')">
+                        {{ __('Book Borrowing') }}
+                    </x-nav-link>
                 </div>
             </div>
+            
+            
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">

@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bookborrowing_info', function (Blueprint $table) {
-            $table->id('sno');
-            $table->string('booknumber',15);
-            $table->string('bookdescription',15);
+        Schema::create('bookborrowingdetail', function (Blueprint $table) {
+            $table->id('bbno');
+            $table->unsignedBigInteger('sno');
+            $table->string('bookno',8);
+            $table->string('bookdescription',100);
             $table->string('bookcode',15);
-            
             $table->timestamps();
+            $table->foreign('sno')->references('sno')->on('student');
         });
     }
 
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bookborrowing');
+        Schema::dropIfExists('bookborrowingdetail');
     }
 };

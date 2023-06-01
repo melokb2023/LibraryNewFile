@@ -11,9 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('netzone_info', function (Blueprint $table) {
-            $table->id();
+        Schema::create('librarysession', function (Blueprint $table) {
+            $table->id('librarysessionno');
+            $table->unsignedBigInteger('sno');
+            $table->string('studentpurpose',15);
+            $table->string('studentsession',15);
             $table->timestamps();
+            $table->foreign('sno')->references('sno')->on('student');
         });
     }
 
@@ -22,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('netzone_info');
+        Schema::dropIfExists('librarysession');
     }
 };

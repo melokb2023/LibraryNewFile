@@ -17,8 +17,8 @@
                     @endforeach
                          </ul>
                     @endif
-                    @foreach($studentinfo as $stuinfo)
-                <form method = "POST" action="{{ route('students-update',['stuno' => $stuinfo->sno]) }}">
+                    @foreach($student as $stuinfo)
+                <form method = "POST" action="{{ route('student-update',['stuno' => $stuinfo->sno]) }}">
                         @csrf
                         @method('patch')
                        <div class="flex-items-center"><label for="ID Number">ID Number</label>

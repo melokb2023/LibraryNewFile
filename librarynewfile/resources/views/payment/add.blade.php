@@ -6,9 +6,9 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-indigo-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-black-900 dark:text-black-100">
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900 dark:text-gray-100">
                    <h6 style="text-align:center">Errors Encountered</h6>
                     @if($errors)
                        <ul>
@@ -21,7 +21,7 @@
                         @csrf
                       <div class="flex-items-center" style="text-align:center"><label for="Student Number">Student Number</label>
                      <div>  
-                       <select name="xsno">
+                       <select class="text-black font-bold" style="text-align:center" name="xsno">
                             @foreach($student as $stuinfo)
                             <option value="{{$stuinfo->sno }}"> {{$stuinfo->idNo}} - {{$stuinfo->lastName}}, {{$stuinfo->firstName}} {{$stuinfo->middleName}} {{$stuinfo->suffix}}</option>
                             @endforeach
@@ -30,12 +30,12 @@
                 </div>
                        <div class="flex-items-center" style="text-align:center"><label for="Payment">Payment</label>
                     <div>
-                    <input type="text"  name="xpayment" value="{{old('xpayment')}}"/>
+                    <input class="text-black font-bold" style="text-align:center"  type="text"  name="xpayment" value="{{old('xpayment')}}"/>
                     </div>
 </div>
 <div class="flex-items-center" style="text-align:center"><label for="paymentmethod"></label>
                     <div>
-                    <select name="xpaymentmethod" style="text-align:center">
+                    <select class="text-black font-bold" style="text-align:center"  name="xpaymentmethod" style="text-align:center">
                         <option value="GCash">Gcash</option>
                         <option value="Direct Payment">Direct Payment</option>
 </select>
@@ -43,12 +43,12 @@
 </div>
                     <div class="flex-items-center" style="text-align:center"><label for="Reasons">Reasons</label>
                     <div>
-                    <input type="text"  name="xreasons" value="{{old('xreasons')}}"/>
+                    <input class="text-black font-bold" style="text-align:center"  type="text"  name="xreasons" value="{{old('xreasons')}}"/>
                     </div>
 </div>
 <div class="flex-items-center" style="text-align:center"><label for="Remarks">Remarks</label>
                     <div>
-                    <input type="text"  name="xremarks" value="{{old('xremarks')}}"/>
+                    <input class="text-black font-bold" style="text-align:center"  type="text"  name="xremarks" value="{{old('xremarks')}}"/>
                     </div>
 </div>
            

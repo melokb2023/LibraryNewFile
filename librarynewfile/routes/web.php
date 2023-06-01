@@ -7,6 +7,8 @@ use App\Http\Controllers\NetZoneController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\BookBorrowingController;
+
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,6 +33,10 @@ Route::get('/bookborrowingdetail',[BookBorrowingController:: class, 'index']);
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+route::get('/home',[HomeController::class,'index'])->middleware('auth')->name('home');
+
+route::get('post',[HomeController::class,'post'])->middleware('auth','admin');
 
 
 //STUDENT

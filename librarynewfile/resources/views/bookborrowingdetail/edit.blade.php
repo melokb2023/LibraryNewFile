@@ -6,9 +6,9 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-red-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-black-900 dark:text-black-100">
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900 dark:text-gray-100">
                    <h6>Errors Encountered</h6>
                     @if($errors)
                        <ul>
@@ -24,12 +24,12 @@
                     
                        <div class="flex-items-center" style="text-align:center"><label for="Book Number">Book Number</label>
                     <div>
-                    <input type="text"  name="xbookno" value="{{$bookborrowing->bookno}}"/>
+                    <input class="text-black font-bold" style="text-align:center" type="text"  name="xbookno" value="{{$bookborrowing->bookno}}"/>
                     </div>
 </div>
 <div class="flex-items-center" style="text-align:center"><label for="Book Description"></label>
                     <div>
-                    <select name="xbookdescription" style="text-align:center">
+                    <select class="text-black font-bold" style="text-align:center" name="xbookdescription" style="text-align:center">
                         <option value="Java Basics">Java Basics</option>
                         <option value="Video Gaming Details">Video Gaming Details</option>
                         <option value="Jose Rizal El Filibusterismo">Jose Rizal El Filibusterismo</option>
@@ -41,10 +41,12 @@
 </div>
                    <div class="flex-items-center" style="text-align:center"><label for="Book Code">Book Code</label>
                     <div>
-                    <input type="text"  name="xbookcode" value="{{$bookborrowing->bookcode}}"/>
+                    <input class="text-black font-bold" style="text-align:center" type="text"  name="xbookcode" value="{{$bookborrowing->bookcode}}"/>
                     </div>
 </div>
-             <button type ="submit" class="mt-4 bg-red-200 text-black font-bold py-2 px-4 rounded"> Submit Info </button>
+<div class="flex-items-center" style="text-align:center">
+             <button type ="submit" class="mt-4 bg-red-200 text-black font-bold py-2 px-4 rounded "> Submit Info </button>
+             </div>
                    </form>
                    @endforeach
                 </div>

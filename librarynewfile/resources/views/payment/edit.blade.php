@@ -6,9 +6,9 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-red-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-black-900 dark:text-black-100">
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900 dark:text-gray-100">
                    <h6>Errors Encountered</h6>
                     @if($errors)
                        <ul>
@@ -24,28 +24,30 @@
                     
                        <div class="flex-items-center" style="text-align:center"><label for="Payment">Payment</label>
                     <div>
-                    <input type="text"  name="xpayment" value="{{$p->payment}}"/>
+                    <input class="text-black font-bold" style="text-align:center" type="text"  name="xpayment" value="{{$p->payment}}"/>
                     </div>
 </div>
              <div class="flex-items-center" style="text-align:center"><label for="Payment Method"></label>
                     <div>
-                    <select name="xpaymentmethod" style="text-align:center">
-                        <option value="GCash">Gcash</option>
-                        <option value="Direct Payment">Direct Payment</option>
+                    <select class="text-black font-bold" style="text-align:center" name="xpaymentmethod" style="text-align:center">
+                        <option class="text-black font-bold" style="text-align:center" value="GCash">Gcash</option>
+                        <option class="text-black font-bold" style="text-align:center" value="Direct Payment">Direct Payment</option>
 </select>
                     </div>
 </div>
                    <div class="flex-items-center" style="text-align:center"><label for="Reasons">Reasons</label>
                     <div>
-                    <input type="text"  name="xreasons" value="{{$p->reasons}}"/>
+                    <input class="text-black font-bold" style="text-align:center" type="text"  name="xreasons" value="{{$p->reasons}}"/>
                     </div>
 </div>
                   <div class="flex-items-center" style="text-align:center"><label for="Remarks">Remarks</label>
                     <div>
-                    <input type="text"  name="xremarks" value="{{$p->remarks}}"/>
+                    <input class="text-black font-bold" style="text-align:center" type="text"  name="xremarks" value="{{$p->remarks}}"/>
                     </div>
-</div>
-             <button type ="submit" class="mt-4 bg-red-200 text-black font-bold py-2 px-4 rounded"> Submit Info </button>
+        </div>  <div class="flex-items-center" style="text-align:center">
+        <button type ="submit" class="mt-4 bg-red-200 text-black font-bold py-2 px-4 rounded" > Submit Info </button>
+        </div>
+             
                    </form>
                    @endforeach
                 </div>
